@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
+
+:root {
+  --text-color: rgb(94, 86, 86);
+  --btn-gradient: linear-gradient(
+    to right,
+    rgb(0, 242, 96, 0.4),
+    rgb(5, 117, 230)
+  );
+  --light-background: rgb(243, 243, 243);
+  --dark-background:rgb(30, 30, 80);
+  --dark-color: rgb(19, 19, 53);
+  --green:rgb(40, 207, 107);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+#container {
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 3fr 2fr 2fr 2fr;
+}
+
+/* Navbar */
+#nav {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 3fr 6fr 3fr;
+  margin: 20px 14px;
+  height: 40px;
+  grid-gap: 20px;
+}
+
+#nav a {
+  color: lightgrey;
+  padding: 0px 14px;
+  position: relative;
+}
+
+
+  
+  #nav a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 150%;
+    left: 0;
+    background: var(--btn-gradient);
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: left;
+   
+  }
+  
+ #nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+#nav a:hover{
+    color: var(--dark-color);
+}
+
+#logo {
+  grid-column: 1/2;
+  margin-left: 20px;
+}
+
+.invite-btn {
+  background: var(--btn-gradient);
+  color: white;
+  height: 50px;
+  padding: 8px 2px;
+  width: 180px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.invite-btn a {
+  color: white !important;
+}
+
+/* CHANGE THE LINEAR GRAD ON HOVER */
+.invite-btn:hover {
+  cursor: pointer;
+  color: lime;
+  background-color: rgb(64, 71, 69);
+}
+
+/* Hamburger Navigation */
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+
+#main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 25px;
+  margin: 20px 20px;
+  padding: 3rem;
+}
+
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 20px;
+  width: 70%;
+  margin-left: 40px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  margin-top: -30px;
+}
+
+.text {
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+.image-section {
+  background: url(/images/bg-intro-desktop.svg);
+  width: 80%;
+  height: 80%;
+  margin: 20px;
+  margin-right: -100px;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Features Section */
+
+#features {
+  display: grid;
+  margin: 10px 40px;
+  background-color: var(--light-background);
+  height: 500px;
+  padding: 1rem 3rem;
+}
+
+.top-section {
+  margin: 0px 30px;
+}
+
+.top-section .title {
+  margin-top: 20px;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.subtitle {
+    margin-top: 15px;
+}
+
+.subtitle:hover{
+    color: var(--green);
+    cursor: pointer;  
+}
+
+.features-grid {
+  margin: 1px 30px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Articles Grid */
+#articles{
+    display: grid;
+
+}
+
+.articles-title{
+    padding:3rem;
+}
+
+.articles-content{
+    margin: 1px 40px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.articles-content h4{
+    margin-top: 10px;
+}
+
+.articles-content h4:hover{
+    color: var(--green);
+    cursor: pointer;  
+}
+
+footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    height: 200px;
+    background-color: var(--dark-background);
+    margin-top: 40px;
+}
+
+footer a,i,p{
+    color: white;
+}
+
+footer a:hover{
+    color: var(--green);
+    cursor: pointer;  
+}
+
+
+.logo-icons-section{
+    /* margin-top: 10px; */
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+
+}
+
+.icons{
+    margin-left: 20px;
+  
+}
+
+.icons i{
+    font-size: 20px;
+ padding-left: 10px;
+}
+
+.icons i:hover{
+    color: var(--green);
+    cursor: pointer;
+}
+
+.footer-menu{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+/*Mobile Query*/
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 5rem;
+      flex-direction: column;
+      background-color: #fff;
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow:
+          0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu.active {
+      left: 0;
+  }
+
+  .nav-item {
+      margin: 2.5rem 0;
+  }
+
+  .hamburger {
+      display: block;
+  
+      cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+  .invite-btn{
+    display: none;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 480px) {
+  #main {
+   display: flex;
+   flex-direction: column-reverse;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+  }
+  .invite-btn {
+    padding: 8px 2px;
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  .title {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+  #features {
+    height: 1500px;
+    margin: 1px 11px; 
+  }
+  .features-grid{
+    text-align: center;
+  }
+  footer{
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 10px 40px;
+    width: 100%;
+    height: 500px;
+  }
+  footer .invite-btn{
+    margin-left: 120px;
+  }
+}
+
+/*Tablet Query*/
+@media only screen and (min-width: 481px) and (max-width:768px) {
+  #main {
+    display: flex;
+   flex-direction: column-reverse;
+ 
+  }
+  .title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+
+  .image-section img{
+    width: 90%;
+    height: 80%;
+    padding-top: 100px;
+  }
+  .invite-btn {
+    margin: auto;
+    padding: 8px 2px;
+    width: 150px;
+    margin-bottom: 40px;
+  }
+  #features {
+    height: 800px;
+    margin: 1px 11px; 
+  }
+  .features-grid{
+    text-align: center;
+  }
+  .articles-content{
+    margin: 1px 14px;
+    padding-right:2rem;
+    grid-column: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+footer{
+  grid-template-columns: 1fr;
+  text-align: center;
+  padding: 10px 40px;
+  width: 100%;
+  height: 500px;
+}
+
+}
+
+
+
+
+
+
+
+.elementor-29 .elementor-element.elementor-element-2d87289e:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-29 .elementor-element.elementor-element-2d87289e > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer{
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: -2px;
+}
+
+.elementor-29 .elementor-element.elementor-element-6ed01bd9:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-29 .elementor-element.elementor-element-6ed01bd9 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer{
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: -2px;
+}
+
+@media screen and (max-width: 480px) {
+  .elementor-194 .elementor-element.elementor-element-259e9bdb .elementor-heading-title{
+    font-size: 40px;
+  }
+
+  .elementor-194 .elementor-element.elementor-element-26847db4 .elementor-heading-title{
+    font-size: 50px;
+  }
+
+
+  .elementor-194 .elementor-element.elementor-element-4462965c > .elementor-widget-container{
+    margin-bottom:65px;
+  }
+
+  .elementor-194 .elementor-element.elementor-element-86d4856{
+    margin-top: 200px;
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+  .elementor-194 .elementor-element.elementor-element-259e9bdb .elementor-heading-title{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .elementor-194 .elementor-element.elementor-element-4462965c > .elementor-widget-container{
+     margin-bottom:65px;
+   }
+     
+     
+ }
+
+
+ @media screen and (max-width: 480px) {
+
+  .elementor-194 .elementor-element.elementor-element-26847db4 .elementor-heading-title{
+    font-size: 50px;
+  }
+
+  .elementor-194 .elementor-element.elementor-element-956d1ad .elementor-heading-title{
+    font-size: 50px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
